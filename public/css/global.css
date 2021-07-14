@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Header --- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+    border-bottom: 1px solid #EEE;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s;
+}
+
+nav ul li a:hover {
+    color: rgb(121, 121, 121);
+}
+
+.logo {
+    width: 80px;
+}
+
+/* --- Main --- */
+
+.container {
+    width: min(90vw, 800px);
+
+    margin: auto;
+
+    text-align: center;
+    margin-top: 40px;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+.poll-title p {
+    font-weight: 200;
+    padding: 10px;
+}
+
+.registration {
+    margin-top: 15px;
+}
+
+.question {
+    margin-top: 30px;
+}
+
+.registration-input {
+    padding: 5px;
+    width: 400px;
+    outline: none;
+}
+
+.vote-button {
+    background: #24252A;
+    color: #FFF;
+    border: none;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all .5s;
+}
+
+.vote-button:hover {
+    background: #CCC;
+    color: #000;
+    cursor: pointer;
+}
+
+.question-text {
+    background: #24252A;
+    color: #FFF;
+    box-shadow: 0 0 5px #505053;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.answers {
+    margin: 15px 0 30px 0;
+    padding: 5px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.answers label {
+    margin: 0 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.answers label:hover {
+    color: #aaa;
+}
+
+.answers input {
+    cursor: pointer;
+}
+
+.results-table th, .results-table td {
+    border: 1px solid #24252A;
+    padding: 5px;
+}
+
+.results-table th {
+    background: #CCC;
+    font-weight: normal;
+}
+
+/* --- sobre --- */
+
+.text {
+    margin: 25px 0;
+}

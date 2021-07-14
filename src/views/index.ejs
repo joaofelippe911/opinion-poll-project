@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Strike:Poll Offensive</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/icon.png" type="image/png">
+
+    
+    <link rel="stylesheet" href="/css/global.css">
+</head>
+<body>
+    <%- include("parts/page-header") %> 
+    <main class="container">
+        <div class="poll-title">
+            <h1>Pesquisa de opinião: CS:GO</h1>
+            <p>O objetivo da pesquisa é coletar informações a respeito dos pensamentos da comunidade sobre o cenário atual.</p>
+        </div>
+        <form name="poll" method="POST" action="/results">
+            <div class="registration">
+                <input type="text" name="firstName" id="firstName" placeholder="Nome" class="registration-input" required />
+            </div>
+            <div class="registration">
+                <input type="text" name="lastName" placeholder="Sobrenome" class="registration-input" required />
+            </div>
+            <div class="registration">
+                <input type="email" name="email" placeholder="E-mail" class="registration-input" required />
+            </div>
+            <div class="questions">
+                <% questions.forEach(element => { %> 
+                    <div class="question">
+                        <p class="question question-text"><%= element.question_text %> </p>
+                        <div class="answers">
+                            <% for (let i = 0; i < element.all_answers.length; i++) { %>
+                                <label>
+                                    <input type="radio" name="<%= element.subject %>" id="<%= element.id %> " value="<%= element.all_answers[i] %>"> <%= element.all_answers[i] %>
+                                </label>
+                            <% } %>   
+                        </div>
+                    </div> 
+                <% }); %>  
+            </div>
+            <button type="submit" class="vote-button">Votar</button>
+        </form>
+        
+        
+        
+    </main>
+</body>
+
+</html>
